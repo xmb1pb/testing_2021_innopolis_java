@@ -6,34 +6,40 @@
 2. Получить первые n членов последовательности Фибоначчи.
 Решить задачу с помощью рекурсивных функций.
 */
-
+import java.util.Scanner;
 
 public class Main
 {
-  public static int nextFibo(int fib1, int fib2)
+  public static int fibonacci(int n)
   {
-      int fib3=fib1+fib2;
-      return fib3;
+      if(n==0)
+      {
+          return 1;
+      }
+      if(n==1)
+      {
+      return 1;
+      }
+      else
+{
+    return fibonacci(n-1)+fibonacci(n-2);
+}
   }
 
-  public static void printFibo(int elems)
-  {
-      int f1=1;
-      int f2=1;
-      int f3=0;
-      System.out.printf("%d %d ", f1,f2);
-      for(int i =3; i<=elems; i++)
-      {
-         f3=nextFibo(f1,f2);
-         System.out.printf(f3+" ");
-         f1=f2;
-         f2=f3;
-      }
-  }
+  
+  
   public static void main (String[]args)
   {
+  int k=5;//k-й член последовательности
+System.out.println(fibonacci(k));
+System.out.println("************");
+
+
     int n =20;   //печатаем первые 20 элементов последовательности
-    printFibo(n);
+    for (int i=1; i<=n;i++)
+    {
+        System.out.print(fibonacci(i)+" ");
+    }
 
   }
 
